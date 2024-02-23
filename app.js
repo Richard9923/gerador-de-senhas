@@ -34,18 +34,37 @@ function rodandoPrograma() {
   quantidadeSimbolos();
 }
 
-const letras = ["a", "b", "c", "A", "B", "C"];
-const numeros = ["1", "2", "3", "4"];
-const simbolos = ["!", "@", "#", "$", "%"];
-
-senha = [];
-rodandoPrograma();
-
 function randomizandoEMelhorandoSenha(senha) {
   const shuffledSenha = senha.sort((a, b) => 0.5 - Math.random());
   let senhaAtualizada = shuffledSenha.toString();
   const senhaFinal = senhaAtualizada.replace(/,/g, "");
   return senhaFinal;
 }
-senhaFinal = randomizandoEMelhorandoSenha(senha);
-console.log(`Senha gerada: ${senhaFinal}`);
+
+function continuarEncerrarPrograma(inputUsuario) {
+  if (inputUsuario == "nova") {
+    console.log("Programa reiniciado.");
+  } else if (inputUsuario == "sair") {
+    console.log("Programa encerrado.");
+    programaOn = false;
+  } else {
+    console.log("Comando não reconhecido, reiniciando programa...");
+  }
+}
+
+const letras = ["a", "b", "c", "A", "B", "C"];
+const numeros = ["1", "2", "3", "4"];
+const simbolos = ["!", "@", "#", "$", "%"];
+
+senha = [];
+programaOn = true;
+
+while (programaOn == true) {
+  rodandoPrograma();
+  senhaFinal = randomizandoEMelhorandoSenha(senha);
+  console.log(`Senha gerada: ${senhaFinal}`);
+  let continuarFinalizar = prompt(
+    'Você quer gerar uma nova senha ou encerrar o programa? Gerar: "nova". Encerrar: "sair".'
+  );
+  continuarEncerrarPrograma(continuarFinalizar);
+}
