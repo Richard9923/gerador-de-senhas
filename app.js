@@ -44,6 +44,7 @@ function randomizandoEMelhorandoSenha(senha) {
 function continuarEncerrarPrograma(inputUsuario) {
   if (inputUsuario == "nova") {
     console.log("Programa reiniciado.");
+    senha.splice(0, senha.length);
   } else if (inputUsuario == "sair") {
     console.log("Programa encerrado.");
     programaOn = false;
