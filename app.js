@@ -41,7 +41,11 @@ const simbolos = ["!", "@", "#", "$", "%"];
 senha = [];
 rodandoPrograma();
 
-const shuffledSenha = senha.sort((a, b) => 0.5 - Math.random());
-let senhaAtualizada = shuffledSenha.toString();
-const senhaFinal = senhaAtualizada.replace(/,/g, "");
+function randomizandoEMelhorandoSenha(senha) {
+  const shuffledSenha = senha.sort((a, b) => 0.5 - Math.random());
+  let senhaAtualizada = shuffledSenha.toString();
+  const senhaFinal = senhaAtualizada.replace(/,/g, "");
+  return senhaFinal;
+}
+senhaFinal = randomizandoEMelhorandoSenha(senha);
 console.log(`Senha gerada: ${senhaFinal}`);
