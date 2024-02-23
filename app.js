@@ -41,7 +41,6 @@ const simbolos = ["!", "@", "#", "$", "%"];
 senha = [];
 rodandoPrograma();
 
-console.log(senha);
 const shuffledSenha = senha.sort((a, b) => 0.5 - Math.random());
 let senhaAtualizada = shuffledSenha.toString();
 const senhaFinal = senhaAtualizada.replace(/,/g, "");
